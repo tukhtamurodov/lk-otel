@@ -10,6 +10,16 @@ import userImg from "./../../../assets/images/user-img.png";
 function PrivateRoutes() {
   const location = useLocation();
   const currentUrl = location.pathname;
+  const titles = [
+    {
+      path: "/object-manage",
+      title: "Управление объектами размещения",
+    },
+    {
+      path: "/registre-new-object",
+      title: "Регистрация нового объекта размещения",
+    },
+  ];
   useEffect(() => {
     const all = document.querySelectorAll(".burger__item");
     for (let el of all) {
@@ -20,8 +30,25 @@ function PrivateRoutes() {
         )?.parentElement?.classList?.add("active");
       }
     }
+    for (let el of titles) {
+      if (el.path === currentUrl) {
+        document.querySelector(".menu__title").innerHTML = el.title;
+      }
+    }
   }, [currentUrl]);
+  function openMenu(e) {
+    const burgerNaws = document.querySelector(".burger__navs");
 
+    burgerNaws.classList.toggle("active");
+  }
+  useEffect(() => {
+    const burgerNaws = document.querySelector(".burger__navs");
+    document.body.addEventListener("click", (e) => {
+      if (!e.target.closest(".burger__icon")) {
+        burgerNaws.classList.remove("active");
+      }
+    });
+  }, []);
   return (
     <div>
       <div className="object-manage">
@@ -43,7 +70,7 @@ function PrivateRoutes() {
                     </div>
                   </div>
                   <div className="burger">
-                    <div className="burger__icon"></div>
+                    <div onClick={openMenu} className="burger__icon"></div>
                     <div className="burger__navs">
                       <div className="burger__item">
                         <Link to={"/object-manage"}>Мои объекты</Link>
