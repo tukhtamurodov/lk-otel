@@ -23,10 +23,10 @@ function NavBar() {
           <Logo />
         </div>
         <div className="section-nav">
-          <Link to={"/object-manage"}>Мои объекты</Link>
+          <Link to={"/dashboard/object-manage"}>Мои объекты</Link>
         </div>
         <div className="section-nav">
-          <Link to={"/registre-new-object"}>Регистрация объекта</Link>
+          <Link to={"/dashboard/registre-new-object/1"}>Регистрация объекта</Link>
         </div>
         <div className="section-nav">
           <Link>Бронирования</Link>

@@ -3,8 +3,9 @@ import { Navigate, useLocation } from "react-router";
 
 function NotFound() {
   const location = useLocation();
-
-  return <Navigate to="/object-manage" state={{ from: location }} replace />;
+  return (
+    <Navigate to="/dashboard/registre-new-object/1" state={{ from: location }} replace />
+  );
 }
 
 export default NotFound;

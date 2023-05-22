@@ -1,8 +1,5 @@
 import React, { useEffect } from "react";
-import { Route, Routes, useLocation } from "react-router";
-import ObjectManag from "../../ObjectManag/ObjectManag";
-import RegistrNewObj from "../../RegistrNewObj/RegistrNewObj";
-import NotFound from "../NotFound/NotFound";
+import { Outlet, useLocation } from "react-router";
 import NavBar from "../../../components/NavBar/NavBar";
 import "./PrivateRoutes.scss";
 import { Link } from "react-router-dom";
@@ -73,10 +70,10 @@ function PrivateRoutes() {
                     <div onClick={openMenu} className="burger__icon"></div>
                     <div className="burger__navs">
                       <div className="burger__item">
-                        <Link to={"/object-manage"}>Мои объекты</Link>
+                        <Link to={"/dashboard/object-manage"}>Мои объекты</Link>
                       </div>
                       <div className="burger__item">
-                        <Link to={"/registre-new-object"}>
+                        <Link to={"/dashboard/registre-new-object/1"}>
                           Регистрация объекта
                         </Link>
                       </div>
@@ -94,11 +91,7 @@ function PrivateRoutes() {
                 </div>
               </div>
             </div>
-            <Routes>
-              <Route path="/object-manage" element={<ObjectManag />} />
-              <Route path="/registre-new-object" element={<RegistrNewObj />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+            <Outlet />
           </main>
         </div>
       </div>

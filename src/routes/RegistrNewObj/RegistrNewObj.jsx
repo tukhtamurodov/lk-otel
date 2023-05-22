@@ -1,9 +1,10 @@
-import React from 'react'
-
+import React from "react";
+import { Outlet} from "react-router";
 function RegistrNewObj() {
   return (
-    <div>RegistrNewObj</div>
-  )
+    <div>
+      <Outlet />
+    </div>
+  );
 }
-
-export default RegistrNewObj
+export default RegistrNewObj;

@@ -10,7 +10,7 @@
   flex-direction: column;
 
   .navs {
-    background: #ffffff;
+    background: #fefefe;
     width: 100%;
   }
   .section-logo {
@@ -76,7 +76,7 @@
         top: 0;
         width: 215px;
         height: 100%;
-        background: #ffffff;
+        background: #fefefe;
         border-radius: 35px 0 0 35px;
       }
       &:nth-of-type(2) a::before {
@@ -132,8 +132,8 @@
   }
 }
 
-@media screen and (max-width: 920px) {
- .navbar{
+@media screen and (max-width: 950px) {
+  .navbar {
     display: none;
   }
 }

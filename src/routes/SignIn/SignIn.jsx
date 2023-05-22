@@ -1,6 +1,5 @@
 import React from "react";
 import "./SignIn.scss";
-import Logo from "../../components/Logo/Logo";
 import MyForm from "../../components/MyForm/MyForm";
 import MyInput from "../../components/MyInput/MyInput";
 function SignIn() {
