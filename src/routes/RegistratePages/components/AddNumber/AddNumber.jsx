@@ -3,9 +3,9 @@ import "./AddNumber.scss";
 import Dog from "./../../../../assets/images/Dog.png";
 import Cat from "./../../../../assets/images/Cat.png";
 import MyButton from "../../../../components/MyButton/MyButton";
-function AddNumber() {
+function AddNumber({ isActive }) {
   return (
-    <div className="add-number">
+    <div className={isActive ? "active add-number" : "add-number"}>
       <div className="add-number__content">
         <h2 className="add-number__title">Добавление номера</h2>
         <div className="add-number__row">

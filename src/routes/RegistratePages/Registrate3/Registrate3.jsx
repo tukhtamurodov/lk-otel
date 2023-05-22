@@ -7,7 +7,7 @@ import AddNumber from "../components/AddNumber/AddNumber";
 function Registrate3() {
   return (
     <div className="registr-3 table">
-      <AddNumber />
+      <AddNumber isActive={false} />
       <div className="row">
         <div className="table__title">Номера и цены </div>
         <div className="table__title-right">

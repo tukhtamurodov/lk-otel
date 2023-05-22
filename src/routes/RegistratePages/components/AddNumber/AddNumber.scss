@@ -11,6 +11,25 @@
   align-items: center;
   padding: 20px;
   justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  .add-number__content {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 515px;
+    transition: all 0.3s;
+    transform: translate(0, -100%);
+  }
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    .add-number__content {
+      transform: translate(0, 0);
+    }
+  }
   .add-number__row {
     display: flex;
     align-items: stretch;
@@ -96,14 +115,6 @@
   }
 }
 
-.add-number__content {
-  width: 100%;
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 40px;
-  max-width: 515px;
-}
-
 @media screen and (max-width: 600px) {
   .add-number {
     padding: 0;
@@ -119,7 +130,7 @@
 
 @media screen and (max-width: 400px) {
   .add-number {
-    .add-number__content{
+    .add-number__content {
       padding: 16px;
     }
     .add-number__title {
@@ -131,7 +142,7 @@
       font-size: 12.1119px;
       line-height: 14px;
     }
-    .add-input{
+    .add-input {
       padding: 11px 12px;
     }
     .add-number__right,
@@ -143,11 +154,11 @@
       line-height: 14px;
       padding: 11px 22px;
     }
-    .price__row{
+    .price__row {
       flex-direction: column;
       align-items: start;
     }
-    .price input{
+    .price input {
       max-width: 205px;
     }
   }
