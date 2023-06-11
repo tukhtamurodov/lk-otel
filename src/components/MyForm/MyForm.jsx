@@ -3,7 +3,7 @@ import Logo from "../Logo/Logo";
 import google from "../../assets/icons/google.svg";
 import MyButton from "../MyButton/MyButton";
 import "./MyForm.scss";
-function MyForm({ children, type }) {
+function MyForm({ children, type, ...props }) {
   let data = {
     signin: {
       title: "С возращением!",
@@ -26,7 +26,7 @@ function MyForm({ children, type }) {
   };
 
   return (
-    <form className="form">
+    <form {...props} className="form">
       <div className="logo">
         <Logo />
       </div>

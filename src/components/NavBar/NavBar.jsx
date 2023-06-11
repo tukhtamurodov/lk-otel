@@ -5,11 +5,17 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 function NavBar() {
   const location = useLocation();
-  const currentUrl = location.pathname;
+  let currentUrl = location.pathname;
   useEffect(() => {
     const all = document.querySelectorAll(".section-nav");
     for (let el of all) {
       el.classList.remove("active");
+    }
+    let array = currentUrl.split("/");
+    if (array.at(-2) === "registre-new-object") {
+      array.pop();
+      array.push("1");
+      currentUrl = array.join("/");
     }
     document
       .querySelector(`a[href='${currentUrl}']`)
@@ -23,16 +29,19 @@ function NavBar() {
           <Logo />
         </div>
         <div className="section-nav">
-          <Link to={"/dashboard/object-manage"}>Мои объекты</Link>
+        {/* to={"/dashboard/object-manage"} */}
+          <Link to={'/'} >Мои объекты</Link>
         </div>
         <div className="section-nav">
-          <Link to={"/dashboard/registre-new-object/1"}>Регистрация объекта</Link>
+          <Link to={"/registre-new-object/1"}>
+            Регистрация объекта
+          </Link>
         </div>
         <div className="section-nav">
-          <Link>Бронирования</Link>
+          <Link to={'/'}>Бронирования</Link>
         </div>
         <div className="section-nav">
-          <Link>Отзывы</Link>
+          <Link to={'/'}>Отзывы</Link>
         </div>
       </div>
       <div className="logout">

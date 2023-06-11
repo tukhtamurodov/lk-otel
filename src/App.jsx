@@ -1,6 +1,6 @@
 import "./sass/index.scss";
 import { Route, Routes } from "react-router";
-import SingIn from "./routes/SignIn/SignIn";
+import SignIn from "./routes/SignIn/SignIn";
 import SignUp from "./routes/SignUp/SignUp";
 import RequireAuth from "./routes/notUiRoutes/RequireAuth/RequireAuth";
 import PrivateRoutes from "./routes/notUiRoutes/PrivateRoutes/PrivateRoutes";
@@ -16,25 +16,20 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="singin" element={<SingIn />} />
-        <Route path="singup" element={<SignUp />} />
-        <Route
-          path="dashboard"
-          element={
-            <RequireAuth>
-              <PrivateRoutes />
-            </RequireAuth>
-          }
-        >
-          <Route path="object-manage" element={<ObjectManage />} />
-          <Route path="registre-new-object" element={<RegistrNewObj />}>
-            <Route path="1" element={<Registrate1 />} />
-            <Route path="2" element={<Registrate2 />} />
-            <Route path="3" element={<Registrate3 />} />
-            <Route path="4" element={<Registrate4 />} />
+        <Route path="*" element={<RequireAuth />}>
+          <Route path="singin" element={<SignIn />} />
+          <Route path="singup" element={<SignUp />} />
+          <Route path="*" element={<PrivateRoutes />}>
+            <Route path="object-manage" element={<ObjectManage />} />
+            <Route path="registre-new-object" element={<RegistrNewObj />}>
+              <Route path="1" element={<Registrate1 />} />
+              <Route path="2" element={<Registrate2 />} />
+              <Route path="3" element={<Registrate3 />} />
+              <Route path="4" element={<Registrate4 />} />
+            </Route>
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Route>
-        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );

@@ -8,7 +8,7 @@ function Registrate4() {
   return (
     <form className="registr-4">
       <Modal
-        className={"active"}
+        isActive={false}
         text={
           "Вы успешно зарегистриро вализарегистрировализ арегистрировали зарегистрировали объект"
         }

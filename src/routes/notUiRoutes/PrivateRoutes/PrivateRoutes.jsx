@@ -70,10 +70,10 @@ function PrivateRoutes() {
                     <div onClick={openMenu} className="burger__icon"></div>
                     <div className="burger__navs">
                       <div className="burger__item">
-                        <Link to={"/dashboard/object-manage"}>Мои объекты</Link>
+                        <Link to={"/"}>Мои объекты</Link>
                       </div>
                       <div className="burger__item">
-                        <Link to={"/dashboard/registre-new-object/1"}>
+                        <Link to={"/registre-new-object/1"}>
                           Регистрация объекта
                         </Link>
                       </div>
